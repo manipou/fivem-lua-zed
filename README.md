@@ -35,6 +35,35 @@ To check if it's active:
 
 ---
 
+## 🚀 Pro-Tip: Professional-Grade LSP Autocomplete (Highly Recommended)
+
+While snippets are incredibly convenient, they occasionally compete with local words in Zed's UI. For **flawless, native, lightning-fast autocompletions** with **full parameter types**, **hover annotations**, and **Go-To-Definition (Ctrl+Click)**, you can link the generated `fivem_natives.lua` stub library globally in Zed!
+
+1. Open your global Zed settings (`Ctrl+,` or `Cmd+,`).
+2. Add the path to `fivem_natives.lua` inside your `lsp.lua-language-server` workspace library configuration:
+   ```json
+   {
+     "lsp": {
+       "lua-language-server": {
+         "settings": {
+           "Lua": {
+             "workspace": {
+               "library": [
+                 "C:/Projects/Zed_FiveM_Ext/fivem_natives.lua"
+               ]
+             }
+           }
+         }
+       }
+     }
+   }
+   ```
+   *(Make sure to adjust the path above to match the exact location of your `fivem_natives.lua` file. Use forward slashes `/` even on Windows!)*
+3. Save your settings.
+4. **Result:** The Lua Language Server will instantly index all 5,300+ FiveM native functions. Every single native will now autocomplete flawlessly with full static typing, parameters, and instant hovers in *all* of your FiveM projects!
+
+---
+
 ## Updating the Snippets
 
 The extension includes an automated generator script that communicates directly with FiveM's runtime API to compile the latest natives registry. If FiveM releases new natives, you can easily update the extension's snippet catalog by running:
